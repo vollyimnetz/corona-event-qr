@@ -4,7 +4,7 @@ Auf der Seite https://www.coronawarn.app/de/eventregistration gibt es die Mögli
 
 Das Projekt stellt eine minimale Internetseite bereit, die den QR-Code der Corona Warnapp auf Basis der in der index.html hinterlegten Daten erzeugt. Diese minimale Website kann man dann auf einem Monitor im Schaufenster laufen lassen, um Besuchern das Einschecken an einem Ort oder einer Veranstaltung zu ermöglichen.
 
-![example](docs/example-usage.mp4)
+https://user-images.githubusercontent.com/6512765/116814204-e9537f80-ab57-11eb-9480-d82470f6b6c9.mp4
 
 Fährt man mit der Maus über den Generierten QR-Code erscheien 2 Button über die der QR-Code bei Bedarf angepasst, bzw. in den Vollbild-Modus des Browsers gewechselt werden kann.
 
