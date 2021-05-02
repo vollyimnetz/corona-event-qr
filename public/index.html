@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6">
+          <style>
+            .qrResultWrap { max-width: 750px; }/* passend für eine Ausgabe im FullHD-Vollbild */
+          </style>
+          <script>
+          window.CORONA_EVENT_QR = {
+            description: 'Testveranstaltung XYZ',//eine Beschreibung der Veranstaltung
+            address: 'Am Markt 5, 03130 Spremberg',//die Adresse der Veranstaltung
+            defaultCheckInLength: '90',//Automatisch ausloggen nach X Minuten
+            startDate: '09.05.2021',//Start Datum -> im Format "dd.mm.yyyy"
+            startTime: '16:30',//Start Zeit -> im Format "hh:mm"
+            endDate: '09.05.2021',//End Datum -> im Format "dd.mm.yyyy"
+            endTime: '17:30',//End Zeit -> im Format "hh:mm"
+            locationType: 9,//die ID des Ortstyps
+            //qrCodeBgPath: 'assets/img/test.png',//optional: alternativer Pfad zum Hintergrundbild des QR-Codes (Standard ist "assets/img/pt-poster-1.0.0.png")
+          };
+          /**
+           * Locationtypes / Ortstypen:
+           * 3 -> Einzelhandel
+           * 4 -> Gastronomiebetrieb
+           * 5 -> Handwerksbetrieb
+           * 6 -> Arbeitsstätte
+           * 7 -> Bildungsstätte
+           * 8 -> öffentliche Gebäude
+           * 1 -> anderer Ort
+           * 9 -> Kulturveranstaltung
+           * 10 -> Vereinsaktivität
+           * 11 -> private Feier
+           * 12 -> Gottesdienst
+           * 2 -> anderes Event
+           */
+
+
+          /*
+          // ----- Bespiel für dynamisch geladene Daten ------
+          setInterval(function() {
+            // An dieser Stelle könnten per z.B. per AJAX oder Zeitbasiert neue Daten geladen werden
+
+            //Verändern der Daten
+            var datum = new Date()
+            let qrHelper = window.CORONA_EVENT_QR_EXTERN;
+
+            datum.setHours(12, 15);   //Uhrzeit: 12:15
+            datum.setMonth(12 -1);  //Dezember (in Javascript muss der Monat mit -1 angegeben werden, da die Monatszählung bei 0 -> Januar anfängt)
+            datum.setDate( 24 );      //24. Tag
+            
+            window.CORONA_EVENT_QR.description = 'Veranstaltung gewechselt nach 30 Sekunden ('+qrHelper.getFormatedDate(datum)+' '+qrHelper.getFormatedTime(datum)+')';
+            window.CORONA_EVENT_QR.startDate = qrHelper.getFormatedDate(datum);
+            window.CORONA_EVENT_QR.startTime = qrHelper.getFormatedTime(datum);
+
+            datum.setHours(15,45);
+            window.CORONA_EVENT_QR.endDate = qrHelper.getFormatedDate(datum);
+            window.CORONA_EVENT_QR.endTime = qrHelper.getFormatedTime(datum);
+
+            qrHelper.load();//neuladen der Daten
+          }, 30 * 1000);//every 30 seconds
+          //*/
+          </script>
+
+          <div id="dynamicQrCodeCoronaWarnApp"></div><!-- die Ausgabe des QR-Codes -->
+        </div>
+
+        <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+          <h1 style="font-weight: bold;">Herzlich Willkommen</h1>
+          <p>Hier könnte ihr Text stehen</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
